@@ -1,4 +1,4 @@
-# 🔐 Automated Backup & Rotation Script with Google Drive Integration
+![image](https://github.com/user-attachments/assets/1e9ff7ff-d79e-4ffc-a043-8c5194131b8d)# 🔐 Automated Backup & Rotation Script with Google Drive Integration
 
 A powerful, automated backup script that handles:
 
@@ -24,20 +24,16 @@ To run this script, ensure the following tools are installed:
 
 ## 📁 Folder Structure
 
-project/
-├── backup.py
-├── .env
-├── /your-project-folder/
-└── README.md
+  ![image](https://github.com/user-attachments/assets/6b38a0bf-cf4c-4dec-876d-89d4bdec9baf)
+
 
 
 ## ☁️ Step 1: Install & Configure `rclone` for Google Drive
 
 ### 🔹 Install rclone:
-curl https://rclone.org/install.sh | sudo bash
+[curl https://rclone.org/install.sh | sudo bash]  (https://rclone.org/install/#linux)
 
-### 🔹 Configure rclone:
-rclone config
+### 🔹 Create API Client ID and Secret:
 
 1.Go to the Google Cloud Console
 2.Create a new project (or use an existing one)
