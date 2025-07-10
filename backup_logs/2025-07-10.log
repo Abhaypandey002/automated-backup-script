@@ -1,0 +1,14 @@
+2025-07-10 14:19:19,208 - INFO - Backup created successfully: backups\daily\MyProject_2025-07-10_14-19-19.zip
+2025-07-10 14:27:19,546 - INFO - Backup created successfully: backups\daily\MyProject_2025-07-10_14-27-19.zip
+2025-07-10 14:27:19,815 - ERROR - rclone failed: Command '['rclone', 'copy', 'backups\\daily\\MyProject_2025-07-10_14-27-19.zip', 'gdrive:Backups']' returned non-zero exit status 1.
+2025-07-10 14:33:52,415 - INFO - Backup created successfully: backups\daily\MyProject_2025-07-10_14-33-52.zip
+2025-07-10 14:33:52,547 - ERROR - rclone failed: Command '['rclone', 'copy', 'backups\\daily\\MyProject_2025-07-10_14-33-52.zip', 'gdrive:Backups']' returned non-zero exit status 1.
+2025-07-10 14:36:49,945 - INFO - Backup created successfully: backups\daily\MyProject_2025-07-10_14-36-49.zip
+2025-07-10 14:36:55,774 - INFO - Backup uploaded to Google Drive: gdrive-enacton:Backups
+2025-07-10 14:46:33,019 - INFO - Backup created successfully: backups\daily\MyProject_2025-07-10_14-46-33.zip
+2025-07-10 14:46:33,019 - INFO - Moved backup to daily: backups\daily\MyProject_2025-07-10_14-46-33.zip
+2025-07-10 14:46:37,679 - INFO - Backup uploaded to Google Drive: gdrive-enacton:Backups
+2025-07-10 15:05:37,231 - INFO - Backup created successfully: backups\daily\MyProject_2025-07-10_15-05-37.zip
+2025-07-10 15:05:37,231 - INFO - Moved backup to daily: backups\daily\MyProject_2025-07-10_15-05-37.zip
+2025-07-10 15:05:41,256 - INFO - Backup uploaded to Google Drive: gdrive-enacton:Backups
+2025-07-10 15:05:42,126 - INFO - cURL Notification sent successfully
