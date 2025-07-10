@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/1e9ff7ff-d79e-4ffc-a043-8c5194131b8d)# 🔐 Automated Backup & Rotation Script with Google Drive Integration
+# 🔐 Automated Backup & Rotation Script with Google Drive Integration
 
 A powerful, automated backup script that handles:
 
@@ -64,7 +64,7 @@ Use web browser to authenticate? y
 
 ### A browser will open. Log in and allow access.
 
-**In terminal **
+# In terminal 
 Configure this as a Shared Drive (Team Drive)? n
 Keep this "gdrive-enacton" remote? y
 
@@ -75,20 +75,20 @@ Keep this "gdrive-enacton" remote? y
 ## 📄 Create a .env File
 
 ### Add the following content to a .env file in your project root:
-PROJECT_NAME=MyProject
-PROJECT_FOLDER=C:/Users/YourUser/Documents/MyProject
-RCLONE_REMOTE=gdrive-enacton
-RCLONE_FOLDER=Backups
-WEBHOOK_URL=https://webhook.site/your-test-url
+1. PROJECT_NAME=MyProject
+2. PROJECT_FOLDER=C:/Users/YourUser/Documents/MyProject
+3. RCLONE_REMOTE=gdrive-enacton
+4. RCLONE_FOLDER=Backups
+5. WEBHOOK_URL=https://webhook.site/your-test-url
 
 
 ## Explanation
 
-PROJECT_NAME: Will be used in backup filename
-PROJECT_FOLDER: Path to the folder you want to back up
-RCLONE_REMOTE: Must match the name you gave in rclone config
-RCLONE_FOLDER: Destination folder name in your Google Drive
-WEBHOOK_URL: Any webhook for alerting (you can use https://webhook.site)
+1. PROJECT_NAME: Will be used in backup filename
+2. PROJECT_FOLDER: Path to the folder you want to back up
+3. RCLONE_REMOTE: Must match the name you gave in rclone config
+4. RCLONE_FOLDER: Destination folder name in your Google Drive
+5. WEBHOOK_URL: Any webhook for alerting (you can use https://webhook.site)
 
 
 
