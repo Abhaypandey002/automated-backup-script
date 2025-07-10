@@ -1,4 +1,4 @@
-# 🔐 Automated Backup & Rotation Script with Google Drive Integration
+# Automated Backup & Rotation Script with Google Drive Integration
 
 A powerful, automated backup script that handles:
 
@@ -10,7 +10,7 @@ A powerful, automated backup script that handles:
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 To run this script, ensure the following tools are installed:
 
@@ -22,13 +22,13 @@ To run this script, ensure the following tools are installed:
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
   ![image](https://github.com/user-attachments/assets/6b38a0bf-cf4c-4dec-876d-89d4bdec9baf)
 
 
 
-## ☁️ Step 1: Install & Configure `rclone` for Google Drive
+## Step 1: Install & Configure `rclone` for Google Drive
 
 ### 🔹 Install rclone:
 [curl https://rclone.org/install.sh | sudo bash]  (https://rclone.org/install/#linux)
@@ -45,7 +45,7 @@ To run this script, ensure the following tools are installed:
 8.Under OAuth consent screen, add your Google account under Test Users
 
 
-## 🛠️ Step 2: Configure rclone
+## Step 2: Configure rclone
 
 ### Open your terminal and run:
   - `rclone config`
@@ -64,9 +64,9 @@ Use web browser to authenticate? y
 
 ### A browser will open. Log in and allow access.
 
-# In terminal 
-Configure this as a Shared Drive (Team Drive)? n
-Keep this "gdrive-enacton" remote? y
+### In terminal 
+1. Configure this as a Shared Drive (Team Drive)? n
+2. Keep this "gdrive-enacton" remote? y
 
 
 ## 🧪 Step 3: Test the rclone remote
@@ -90,15 +90,14 @@ Keep this "gdrive-enacton" remote? y
 4. RCLONE_FOLDER: Destination folder name in your Google Drive
 5. WEBHOOK_URL: Any webhook for alerting (you can use https://webhook.site)
 
-
-
 ## 🚀 Run the Backup Script
   - `python backup.py`
 
 ### This will:
-
 1. Create a zipped backup of your project folder
 2. Save it under backups/daily/
 3. Upload it to Google Drive under the folder Backups/
 4. Log all actions in backup_logs/YYYY-MM-DD.log
 5. Send a webhook notification (if WEBHOOK_URL is set)
+
+
