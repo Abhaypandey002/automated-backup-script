@@ -75,11 +75,14 @@ To run this script, ensure the following tools are installed:
 ## 📄 Create a .env File
 
 ### Add the following content to a .env file in your project root:
-1. PROJECT_NAME=MyProject
-2. PROJECT_FOLDER=C:/Users/YourUser/Documents/MyProject
-3. RCLONE_REMOTE=gdrive-enacton
-4. RCLONE_FOLDER=Backups
-5. WEBHOOK_URL=https://webhook.site/your-test-url
+    PROJECT_FOLDER=/home/abhay/dev/project
+    RETENTION_DAYS=7
+    RETENTION_WEEKS=4
+    RETENTION_MONTHS=3
+    RCLONE_REMOTE=gdrive-enacton
+    RCLONE_FOLDER=Backups
+    CURL_ENABLED=True
+    WEBHOOK_URL=https://webhook.site/abc
 
 
 ## Explanation
