@@ -35,14 +35,14 @@ To run this script, ensure the following tools are installed:
 
 ### 🔹 Create API Client ID and Secret:
 
-1.Go to the Google Cloud Console
-2.Create a new project (or use an existing one)
-3.Enable the Google Drive API in your project
-4.Go to APIs & Services → Credentials
-5.Click "Create Credentials" → "OAuth client ID"
-6.Choose Desktop App as the application type
-7.Copy the generated Client ID and Client Secret
-8.Under OAuth consent screen, add your Google account under Test Users
+  1.Go to the Google Cloud Console
+  2.Create a new project (or use an existing one)
+  3.Enable the Google Drive API in your project
+  4.Go to APIs & Services → Credentials
+  5.Click "Create Credentials" → "OAuth client ID"
+  6.Choose Desktop App as the application type
+  7.Copy the generated Client ID and Client Secret
+  8.Under OAuth consent screen, add your Google account under Test Users
 
 
 ## Step 2: Configure rclone
@@ -51,15 +51,15 @@ To run this script, ensure the following tools are installed:
   - `rclone config`
 
 ### Then follow this step-by-step: 
-n) New remote
-name> gdrive-enacton
-Storage> drive
-client_id> [your client_id].apps.googleusercontent.com
-client_secret> [your_client_secret]
-scope> 1
-service_account_file> (leave blank)
-Edit advanced config? n
-Use web browser to authenticate? y
+  n) New remote
+  name> gdrive-enacton
+  Storage> drive
+  client_id> [your client_id].apps.googleusercontent.com
+  client_secret> [your_client_secret]
+  scope> 1
+  service_account_file> (leave blank)
+  Edit advanced config? n
+  Use web browser to authenticate? y
 
 
 ### A browser will open. Log in and allow access.
