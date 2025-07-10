@@ -1,90 +1,108 @@
-# 🔐 Automated Backup and Rotation Script with Google Drive Integration
+# 🔐 Automated Backup & Rotation Script with Google Drive Integration
 
-## 📘 Overview
+A powerful, automated backup script that handles:
 
-This script automates the process of:
-- Creating timestamped backups of your project folder
-- Uploading backups to Google Drive using `rclone`
-- Applying a professional **rotational backup strategy** (daily, weekly, monthly)
-- Deleting old backups securely
-- Sending success/failure **notifications** via `cURL` webhook
+- **Project folder backups**
+- **Google Drive uploads** using `rclone`
+- **Rotational backup strategy** (Daily, Weekly, Monthly)
+- **Old backup pruning**
+- **Webhook notifications** for success/failure
 
 ---
 
 ## ⚙️ Requirements
 
-- Python 3.8+
-- rclone (for Google Drive integration)
-- Python packages: `python-dotenv`, `requests`
+To run this script, ensure the following tools are installed:
+
+- Python **3.8+**
+- [rclone](https://rclone.org/) – for Google Drive integration
+- Python packages:
+  - `python-dotenv`
+  - `requests`
 
 ---
 
 ## 📁 Folder Structure
 
+project/
+├── backup.py
+├── .env
+├── /your-project-folder/
+└── README.md
 
 
-2. ☁️ Install and Configure rclone (for Google Drive)
+## ☁️ Step 1: Install & Configure `rclone` for Google Drive
 
-🔹 Install rclone:
-
+### 🔹 Install rclone:
 curl https://rclone.org/install.sh | sudo bash
 
-
-
-Configure Google Drive:
-
+### 🔹 Configure rclone:
 rclone config
 
-Type n to create a new remote
-
-Name it (e.g., gdrive)
-
-Choose storage: drive
-
-Say Yes to auto config
-
-Login in the browser
-
-Done!
+1.Go to the Google Cloud Console
+2.Create a new project (or use an existing one)
+3.Enable the Google Drive API in your project
+4.Go to APIs & Services → Credentials
+5.Click "Create Credentials" → "OAuth client ID"
+6.Choose Desktop App as the application type
+7.Copy the generated Client ID and Client Secret
+8.Under OAuth consent screen, add your Google account under Test Users
 
 
-🔹 Test Upload:
+## 🛠️ Step 2: Configure rclone
 
-rclone ls gdrive:
+### Open your terminal and run:
+  - `rclone config`
+
+### Then follow this step-by-step: 
+n) New remote
+name> gdrive-enacton
+Storage> drive
+client_id> [your client_id].apps.googleusercontent.com
+client_secret> [your_client_secret]
+scope> 1
+service_account_file> (leave blank)
+Edit advanced config? n
+Use web browser to authenticate? y
 
 
+### A browser will open. Log in and allow access.
+
+**In terminal **
+Configure this as a Shared Drive (Team Drive)? n
+Keep this "gdrive-enacton" remote? y
 
 
-3. 📝 Create Your .env File
+## 🧪 Step 3: Test the rclone remote
+ - `rclone ls gdrive-enacton:`
 
-# Project Info
-PROJECT_NAME=MyAwesomeApp
-PROJECT_FOLDER=/full/path/to/your/project
+## 📄 Create a .env File
 
-# Backup Rotation Policy
-RETENTION_DAYS=7
-RETENTION_WEEKS=4
-RETENTION_MONTHS=3
-
-# Google Drive Upload
-RCLONE_REMOTE=gdrive
+### Add the following content to a .env file in your project root:
+PROJECT_NAME=MyProject
+PROJECT_FOLDER=C:/Users/YourUser/Documents/MyProject
+RCLONE_REMOTE=gdrive-enacton
 RCLONE_FOLDER=Backups
-
-# Webhook Notification
-CURL_ENABLED=True
-WEBHOOK_URL=https://webhook.site/your-unique-url
+WEBHOOK_URL=https://webhook.site/your-test-url
 
 
+## Explanation
 
-🚀 Running the Script
-python backup.py
+PROJECT_NAME: Will be used in backup filename
+PROJECT_FOLDER: Path to the folder you want to back up
+RCLONE_REMOTE: Must match the name you gave in rclone config
+RCLONE_FOLDER: Destination folder name in your Google Drive
+WEBHOOK_URL: Any webhook for alerting (you can use https://webhook.site)
 
 
 
-Example cURL Notification Payload
+## 🚀 Run the Backup Script
+  - `python backup.py`
 
-{
-  "project": "MyAwesomeApp",
-  "date": "2025-07-10 12:30:01",
-  "test": "BackupSuccessful"
-}
+### This will:
+
+1. Create a zipped backup of your project folder
+2. Save it under backups/daily/
+3. Upload it to Google Drive under the folder Backups/
+4. Log all actions in backup_logs/YYYY-MM-DD.log
+5. Send a webhook notification (if WEBHOOK_URL is set)
